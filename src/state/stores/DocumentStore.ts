@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { Document } from '../../core/entities/Document';
 import { AddDocumentUseCase, ChatWithDocumentUseCase } from '../../core/use-cases/document/DocumentUseCases';
+import { VoiceNoteUseCase } from '../../core/use-cases/document/VoiceNoteUseCases';
 import { IDocumentRepository } from '../../core/repositories/DocumentRepository';
 import { Logger } from '../../infrastructure/utils/Logger';
 
@@ -10,11 +11,13 @@ export class DocumentStore {
     isLoading = false;
     error: string | null = null;
     chatHistory: { role: 'user' | 'model', text: string }[] = [];
+    isRecording = false;
 
     constructor(
         private repository: IDocumentRepository,
         private addDocumentUseCase: AddDocumentUseCase,
-        private chatWithDocumentUseCase: ChatWithDocumentUseCase
+        private chatWithDocumentUseCase: ChatWithDocumentUseCase,
+        private voiceNoteUseCase: VoiceNoteUseCase
     ) {
         makeAutoObservable(this);
     }
@@ -75,15 +78,10 @@ export class DocumentStore {
         this.chatHistory.push({ role: 'user', text: message });
 
         try {
-            // Optimistic update done, now fetch response
             const response = await this.chatWithDocumentUseCase.execute(
                 this.selectedDocument.id,
                 message,
-                this.chatHistory.slice(0, -1) // Exclude current message? implementation relies on history excluding current?
-                // ChatService expects history BEFORE current.
-                // But AddDocumentUseCase uses ChatService.chat(history, msg).
-                // check ChatService.chat signature: (history[], newMessage, context)
-                // So passing history excluding new message is correct.
+                this.chatHistory.slice(0, -1)
             );
 
             runInAction(() => {
@@ -93,6 +91,48 @@ export class DocumentStore {
             Logger.error('Chat failed', e);
             runInAction(() => {
                 this.chatHistory.push({ role: 'model', text: 'Error: Failed to get response.' });
+            });
+        }
+    }
+
+    async startRecording() {
+        try {
+            await this.voiceNoteUseCase.startRecording();
+            runInAction(() => {
+                this.isRecording = true;
+                this.error = null;
+            });
+        } catch (e) {
+            Logger.error('Failed to start recording', e);
+            runInAction(() => {
+                this.error = 'Failed to start recording';
+                this.isRecording = false;
+            });
+        }
+    }
+
+    async stopRecordingAndTranscribe(): Promise<string | null> {
+        try {
+            this.isLoading = true;
+            const uri = await this.voiceNoteUseCase.stopRecording();
+            runInAction(() => {
+                this.isRecording = false;
+            });
+
+            if (!uri) return null;
+
+            const text = await this.voiceNoteUseCase.transcribeAudio(uri);
+            return text;
+
+        } catch (e) {
+            Logger.error('Failed to transcribe', e);
+            runInAction(() => {
+                this.error = 'Failed to transcribe audio';
+            });
+            return null;
+        } finally {
+            runInAction(() => {
+                this.isLoading = false;
             });
         }
     }

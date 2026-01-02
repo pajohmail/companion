@@ -11,7 +11,7 @@ export const DocumentAddScreen = observer(() => {
     const navigation = useNavigation();
 
     const [title, setTitle] = useState('');
-    const [mode, setMode] = useState('text'); // 'text' | 'image'
+    const [mode, setMode] = useState('text'); // 'text' | 'image' | 'voice'
     const [textContent, setTextContent] = useState('');
     const [imageUri, setImageUri] = useState<string | null>(null);
     const [imageBase64, setImageBase64] = useState<string | undefined>(undefined);
@@ -31,6 +31,18 @@ export const DocumentAddScreen = observer(() => {
         }
     };
 
+    const handleRecordToggle = async () => {
+        if (documentStore.isRecording) {
+            const text = await documentStore.stopRecordingAndTranscribe();
+            if (text) {
+                setTextContent(text);
+                setMode('text'); // Switch to text mode to edit transcription
+            }
+        } else {
+            await documentStore.startRecording();
+        }
+    };
+
     const handleSave = async () => {
         if (!title.trim()) return;
         setLoading(true);
@@ -38,8 +50,8 @@ export const DocumentAddScreen = observer(() => {
             await documentStore.addDocument(
                 title,
                 mode === 'image' ? imageBase64 : undefined,
-                mode === 'text' ? textContent : undefined,
-                [] // custom tags not implemented in UI yet
+                mode === 'text' || mode === 'voice' ? textContent : undefined,
+                []
             );
             navigation.goBack();
         } finally {
@@ -52,7 +64,7 @@ export const DocumentAddScreen = observer(() => {
             <Appbar.Header>
                 <Appbar.BackAction onPress={() => navigation.goBack()} />
                 <Appbar.Content title="Add Document" />
-                <Appbar.Action icon="check" onPress={handleSave} disabled={loading || !title} />
+                <Appbar.Action icon="check" onPress={handleSave} disabled={loading || !title || documentStore.isRecording} />
             </Appbar.Header>
 
             <ScrollView contentContainerStyle={styles.content}>
@@ -62,16 +74,19 @@ export const DocumentAddScreen = observer(() => {
                     onChangeText={setTitle}
                     mode="outlined"
                     style={styles.input}
+                    disabled={documentStore.isRecording}
                 />
 
                 <SegmentedButtons
                     value={mode}
                     onValueChange={setMode}
                     buttons={[
-                        { value: 'text', label: 'Type Text' },
-                        { value: 'image', label: 'Scan Image' },
+                        { value: 'text', label: 'Type' },
+                        { value: 'image', label: 'Scan' },
+                        { value: 'voice', label: 'Voice' },
                     ]}
                     style={styles.segment}
+                    disabled={documentStore.isRecording}
                 />
 
                 {mode === 'text' && (
@@ -100,14 +115,31 @@ export const DocumentAddScreen = observer(() => {
                     </View>
                 )}
 
-                {loading && <ActivityIndicator animating={true} style={styles.loader} />}
+                {mode === 'voice' && (
+                    <View style={styles.voiceSection}>
+                        <Button
+                            mode={documentStore.isRecording ? "contained" : "outlined"}
+                            onPress={handleRecordToggle}
+                            icon={documentStore.isRecording ? "stop" : "microphone"}
+                            buttonColor={documentStore.isRecording ? 'red' : undefined}
+                            loading={documentStore.isLoading && mode === 'voice'}
+                        >
+                            {documentStore.isRecording ? "Stop Recording" : "Start Recording"}
+                        </Button>
+                        <HelperText type="info">
+                            Recording will be transcribed by Gemini and converted to text.
+                        </HelperText>
+                    </View>
+                )}
+
+                {(loading || documentStore.isLoading) && <ActivityIndicator animating={true} style={styles.loader} />}
 
                 <Button
                     mode="contained"
                     onPress={handleSave}
                     style={styles.saveBtn}
                     loading={loading}
-                    disabled={loading || !title}
+                    disabled={loading || !title || documentStore.isRecording}
                 >
                     Save Document
                 </Button>
@@ -123,6 +155,7 @@ const styles = StyleSheet.create({
     segment: { marginBottom: 16 },
     textArea: { marginBottom: 16, backgroundColor: '#fff' },
     imageSection: { alignItems: 'center', marginBottom: 16 },
+    voiceSection: { alignItems: 'center', marginBottom: 16, padding: 20 },
     preview: { width: 200, height: 200, marginTop: 16, borderRadius: 8 },
     saveBtn: { marginTop: 16 },
     loader: { marginTop: 10 }

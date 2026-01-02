@@ -9,6 +9,25 @@ jest.mock('expo-image-picker', () => ({
     },
 }));
 
+jest.mock('expo-av', () => ({
+    Audio: {
+        requestPermissionsAsync: jest.fn(),
+        setAudioModeAsync: jest.fn(),
+        Recording: {
+            createAsync: jest.fn(),
+        },
+        RecordingOptionsPresets: {
+            HIGH_QUALITY: {},
+        }
+    }
+}));
+
+jest.mock('expo-file-system', () => ({
+    readAsStringAsync: jest.fn(),
+    EncodingType: { Base64: 'base64' },
+    documentDirectory: 'file:///data/user/0/host.exp.exponent/files/',
+}));
+
 jest.mock('@react-native-google-signin/google-signin', () => ({
     GoogleSignin: {
         configure: jest.fn(),
