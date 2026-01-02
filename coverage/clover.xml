@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1767360343821" clover="3.2.0">
-  <project timestamp="1767360343821" name="All files">
-    <metrics statements="814" coveredstatements="472" conditionals="326" coveredconditionals="124" methods="233" coveredmethods="127" elements="1373" coveredelements="723" complexity="0" loc="814" ncloc="814" packages="20" files="42" classes="42"/>
+<coverage generated="1767360793715" clover="3.2.0">
+  <project timestamp="1767360793715" name="All files">
+    <metrics statements="818" coveredstatements="476" conditionals="330" coveredconditionals="126" methods="234" coveredmethods="128" elements="1382" coveredelements="730" complexity="0" loc="818" ncloc="818" packages="20" files="42" classes="42"/>
     <package name="core.di">
       <metrics statements="17" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
       <file name="Container.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/di/Container.ts">
@@ -11,15 +11,15 @@
         <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="12" count="2" type="stmt"/>
         <line num="14" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="26" count="18" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="11" type="stmt"/>
-        <line num="30" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="6" type="stmt"/>
-        <line num="32" count="6" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="36" count="6" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="26" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="13" type="stmt"/>
+        <line num="30" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="43" count="3" type="stmt"/>
         <line num="44" count="3" type="stmt"/>
@@ -29,38 +29,38 @@
       <metrics statements="17" coveredstatements="14" conditionals="16" coveredconditionals="13" methods="3" coveredmethods="2"/>
       <file name="Document.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/entities/Document.ts">
         <metrics statements="10" coveredstatements="7" conditionals="10" coveredconditionals="7" methods="2" coveredmethods="1"/>
-        <line num="21" count="6" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="23" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="25" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="26" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
       </file>
       <file name="Password.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/entities/Password.ts">
         <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="21" count="6" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="25" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="6" type="stmt"/>
+        <line num="40" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="6" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
     <package name="core.entities.base">
       <metrics statements="6" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
       <file name="Entity.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/entities/base/Entity.ts">
         <metrics statements="6" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
-        <line num="7" count="14" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="14" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="14" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="14" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="11" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
       </file>
     </package>
     <package name="core.repositories">
@@ -163,38 +163,38 @@
       <metrics statements="50" coveredstatements="39" conditionals="27" coveredconditionals="13" methods="10" coveredmethods="8"/>
       <file name="GeminiChatService.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/services/ai/GeminiChatService.ts">
         <metrics statements="28" coveredstatements="23" conditionals="16" coveredconditionals="9" methods="6" coveredmethods="4"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="56" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="47" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
         <line num="64" count="2" type="stmt"/>
-        <line num="70" count="2" type="stmt"/>
-        <line num="75" count="2" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
-        <line num="85" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="89" count="2" type="stmt"/>
-        <line num="92" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="73" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="81" count="2" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+        <line num="99" count="2" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="102" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
       </file>
       <file name="GeminiTranscriptionService.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/services/ai/GeminiTranscriptionService.ts">
         <metrics statements="22" coveredstatements="16" conditionals="11" coveredconditionals="4" methods="4" coveredmethods="4"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
         <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="22" count="1" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
@@ -222,7 +222,7 @@
       <metrics statements="24" coveredstatements="18" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="3"/>
       <file name="AudioRecorderService.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/services/audio/AudioRecorderService.ts">
         <metrics statements="24" coveredstatements="18" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="3"/>
-        <line num="12" count="3" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
@@ -345,42 +345,42 @@
       <metrics statements="36" coveredstatements="23" conditionals="12" coveredconditionals="8" methods="5" coveredmethods="4"/>
       <file name="GeminiOCRService.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/services/ocr/GeminiOCRService.ts">
         <metrics statements="36" coveredstatements="23" conditionals="12" coveredconditionals="8" methods="5" coveredmethods="4"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="48" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="50" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="57" count="3" type="stmt"/>
-        <line num="58" count="3" type="stmt"/>
-        <line num="59" count="3" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
-        <line num="85" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="86" count="0" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="51" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="67" count="3" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
         <line num="90" count="2" type="stmt"/>
         <line num="92" count="2" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
-        <line num="96" count="1" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="101" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
+        <line num="93" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="100" count="2" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
-        <line num="121" count="0" type="stmt"/>
-        <line num="123" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="125" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="128" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
+        <line num="137" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
       </file>
       <file name="OCRService.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/core/services/ocr/OCRService.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -492,7 +492,7 @@
       </file>
     </package>
     <package name="infrastructure.utils">
-      <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
+      <metrics statements="13" coveredstatements="13" conditionals="10" coveredconditionals="7" methods="6" coveredmethods="6"/>
       <file name="ErrorHandler.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/infrastructure/utils/ErrorHandler.ts">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="5" count="1" type="stmt"/>
@@ -503,12 +503,14 @@
         <line num="16" count="1" type="stmt"/>
       </file>
       <file name="Logger.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/infrastructure/utils/Logger.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="4"/>
         <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
       </file>
     </package>
     <package name="presentation.components.common">
@@ -612,7 +614,7 @@
         <line num="58" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="151" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
       </file>
       <file name="DocumentDetailScreen.tsx" path="/Users/per-arnejohansson/Documents/dev/companion/src/presentation/screens/DocumentDetailScreen.tsx">
         <metrics statements="20" coveredstatements="2" conditionals="16" coveredconditionals="0" methods="6" coveredmethods="0"/>
@@ -762,28 +764,30 @@
       </file>
     </package>
     <package name="state">
-      <metrics statements="29" coveredstatements="28" conditionals="4" coveredconditionals="2" methods="8" coveredmethods="8"/>
+      <metrics statements="31" coveredstatements="30" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="9"/>
       <file name="RootStore.ts" path="/Users/per-arnejohansson/Documents/dev/companion/src/state/RootStore.ts">
-        <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="25" count="1" type="stmt"/>
+        <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
       </file>
       <file name="StoreContext.tsx" path="/Users/per-arnejohansson/Documents/dev/companion/src/state/StoreContext.tsx">
         <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>

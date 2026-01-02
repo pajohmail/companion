@@ -19,7 +19,7 @@ export class VoiceNoteUseCase {
     async transcribeAudio(uri: string): Promise<string> {
         // Read file as base64
         const fileContent = await FileSystem.readAsStringAsync(uri, {
-            encoding: FileSystem.EncodingType.Base64,
+            encoding: 'base64',
         });
 
         // Determine mime type (simplified)

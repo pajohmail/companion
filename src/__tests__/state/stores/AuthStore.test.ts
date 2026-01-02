@@ -10,6 +10,7 @@ describe('AuthStore', () => {
             login: jest.fn(),
             logout: jest.fn(),
             getCurrentUser: jest.fn(),
+            getAccessToken: jest.fn(),
         };
         authStore = new AuthStore(mockAuthService);
     });

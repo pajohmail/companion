@@ -13,11 +13,15 @@ export class Logger {
     }
 
     static info(message: string, ...args: any[]): void {
-        console.info(`[INFO] ${message}`, ...args);
+        if (__DEV__) {
+            console.info(`[INFO] ${message}`, ...args);
+        }
     }
 
     static warn(message: string, ...args: any[]): void {
-        console.warn(`[WARN] ${message}`, ...args);
+        if (__DEV__) {
+            console.warn(`[WARN] ${message}`, ...args);
+        }
     }
 
     static error(message: string, error?: any, ...args: any[]): void {

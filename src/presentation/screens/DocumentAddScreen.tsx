@@ -86,7 +86,6 @@ export const DocumentAddScreen = observer(() => {
                         { value: 'voice', label: 'Voice' },
                     ]}
                     style={styles.segment}
-                    disabled={documentStore.isRecording}
                 />
 
                 {mode === 'text' && (

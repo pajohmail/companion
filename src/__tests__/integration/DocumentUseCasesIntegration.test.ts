@@ -25,7 +25,7 @@ describe('Document Integration', () => {
 
     beforeEach(() => {
         addUseCase = new AddDocumentUseCase(mockRepo, mockOCR);
-        store = new DocumentStore(mockRepo, addUseCase, {} as any); // mock ChatUseCase
+        store = new DocumentStore(mockRepo, addUseCase, {} as any, {} as any); // mock ChatUseCase & VoiceNoteUseCase
         jest.clearAllMocks();
     });
 

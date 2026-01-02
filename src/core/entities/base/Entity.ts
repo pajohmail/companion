@@ -1,3 +1,7 @@
+export interface EntityProps {
+    [key: string]: any;
+}
+
 export abstract class Entity<T> {
     public readonly id: string;
     public readonly createdAt: Date;

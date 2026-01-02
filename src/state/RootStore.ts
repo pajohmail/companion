@@ -13,6 +13,9 @@ import { CreatePasswordUseCase, GetPasswordsUseCase } from '../core/use-cases/pa
 import { GeminiOCRService } from '../core/services/ocr/GeminiOCRService';
 import { GeminiChatService } from '../core/services/ai/GeminiChatService';
 import { AddDocumentUseCase, ChatWithDocumentUseCase } from '../core/use-cases/document/DocumentUseCases';
+import { VoiceNoteUseCase } from '../core/use-cases/document/VoiceNoteUseCases';
+import { GeminiTranscriptionService } from '../core/services/ai/GeminiTranscriptionService';
+import { AudioRecorderService, IAudioRecorderService } from '../core/services/audio/AudioRecorderService';
 
 export class RootStore {
     authStore: AuthStore;
@@ -42,6 +45,10 @@ export class RootStore {
         // AI Services
         container.registerFactory('OCRService', c => new GeminiOCRService(this.settingsStore, c.resolve('AuthService')));
         container.registerFactory('ChatService', c => new GeminiChatService(this.settingsStore, c.resolve('AuthService')));
+        container.registerFactory('TranscriptionService', c => new GeminiTranscriptionService(this.settingsStore, c.resolve('AuthService')));
+
+        // Native Services
+        container.register('AudioRecorderService', new AudioRecorderService());
 
         // Use Cases
         const passwordRepo = container.resolve<PasswordRepository>('PasswordRepository');
@@ -66,6 +73,10 @@ export class RootStore {
             new ChatWithDocumentUseCase(
                 container.resolve<DocumentRepository>('DocumentRepository'),
                 container.resolve<GeminiChatService>('ChatService')
+            ),
+            new VoiceNoteUseCase(
+                container.resolve<IAudioRecorderService>('AudioRecorderService'),
+                container.resolve<GeminiTranscriptionService>('TranscriptionService')
             )
         );
     }
