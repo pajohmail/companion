@@ -4,6 +4,9 @@ import { SettingsStore } from '../../../state/stores/SettingsStore';
 import { IAuthService } from '../auth/AuthService';
 import { Logger } from '../../../infrastructure/utils/Logger';
 
+/**
+ * Service for extracting text and credentials from images using Gemini 1.5 Flash.
+ */
 export class GeminiOCRService implements IOCRService {
     private readonly API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
@@ -53,6 +56,11 @@ export class GeminiOCRService implements IOCRService {
         return this.API_URL;
     }
 
+    /**
+     * Extracts structured credentials (username, password, etc) from an image.
+     * @param imageBase64 - Base64 encoded image string.
+     * @returns Parsed credentials object.
+     */
     async extractCredentials(imageBase64: string): Promise<ExtractedCredentials> {
         try {
             const headers = await this.getHeaders();
@@ -96,6 +104,12 @@ export class GeminiOCRService implements IOCRService {
             throw error;
         }
     }
+
+    /**
+     * Extracts raw text from an image.
+     * @param imageBase64 - Base64 encoded image string.
+     * @returns extracted text.
+     */
     async extractText(imageBase64: string): Promise<string> {
         try {
             const headers = await this.getHeaders();

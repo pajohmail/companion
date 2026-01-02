@@ -3,11 +3,18 @@ import { SettingsStore } from '../../../state/stores/SettingsStore';
 import { IAuthService } from '../auth/AuthService';
 import { Logger } from '../../../infrastructure/utils/Logger';
 
+/**
+ * Structure of a chat message.
+ */
 export interface ChatMessage {
     role: 'user' | 'model';
     text: string;
 }
 
+/**
+ * Service for interacting with Gemini AI for Chat and Summarization.
+ * Supports dual authentication (User API Key or Account Quota).
+ */
 export class GeminiChatService {
     private readonly API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
@@ -16,6 +23,9 @@ export class GeminiChatService {
         private authService: IAuthService
     ) { }
 
+    /**
+     * Determines headers based on authentication mode.
+     */
     private async getHeaders(): Promise<Record<string, string>> {
         if (this.settingsStore.useOwnKey) {
             return {
@@ -42,6 +52,13 @@ export class GeminiChatService {
         return this.API_URL;
     }
 
+    /**
+     * Sends a message to the Gemini Chat model, including history and optional context.
+     * @param history - Array of previous messages.
+     * @param newMessage - The user's new message.
+     * @param context - (Optional) Additional context (e.g., document content).
+     * @returns The AI's response text.
+     */
     async chat(history: ChatMessage[], newMessage: string, context?: string): Promise<string> {
         try {
             const headers = await this.getHeaders();
@@ -94,6 +111,11 @@ export class GeminiChatService {
         }
     }
 
+    /**
+     * Summarizes the provided text using Gemini.
+     * @param text - The text content to summarize.
+     * @returns A concise summary.
+     */
     async summarize(text: string): Promise<string> {
         return this.chat([], "Summarize the following document content concisely:", text);
     }
