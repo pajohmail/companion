@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>21/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>21/25</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -116,39 +116,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,39 +164,39 @@ import { IAuthService, User } from '../../core/services/auth/AuthService';
 import { Logger } from '../../infrastructure/utils/Logger';
 &nbsp;
 export class AuthStore {
-    user: User | null = <span class="cstat-no" title="statement not covered" >null;</span>
-    isLoading: boolean = <span class="cstat-no" title="statement not covered" >false;</span>
-    error: string | null = <span class="cstat-no" title="statement not covered" >null;</span>
+    user: User | null = null;
+    isLoading: boolean = false;
+    error: string | null = null;
 &nbsp;
-<span class="fstat-no" title="function not covered" >    co</span>nstructor(private authService: IAuthService) {
-<span class="cstat-no" title="statement not covered" >        makeAutoObservable(this);</span>
+    constructor(private authService: IAuthService) {
+        makeAutoObservable(this);
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    as</span>ync login() {
-<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
-<span class="cstat-no" title="statement not covered" >        this.error = null;</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-            const user = <span class="cstat-no" title="statement not covered" >await this.authService.login();</span>
-<span class="cstat-no" title="statement not covered" >            runInAction(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                this.user = user;</span>
-<span class="cstat-no" title="statement not covered" >                this.isLoading = false;</span>
+    async login() {
+        this.isLoading = true;
+        this.error = null;
+        try {
+            const user = await this.authService.login();
+            runInAction(() =&gt; {
+                this.user = user;
+                this.isLoading = false;
             });
         } catch (error: any) {
-<span class="cstat-no" title="statement not covered" >            runInAction(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                this.error = error.message || 'Login failed';</span>
-<span class="cstat-no" title="statement not covered" >                this.isLoading = false;</span>
+            runInAction(() =&gt; {
+                this.error = error.message || <span class="branch-1 cbranch-no" title="branch not covered" >'Login failed';</span>
+                this.isLoading = false;
             });
-<span class="cstat-no" title="statement not covered" >            Logger.error('Login action failed', error);</span>
+            Logger.error('Login action failed', error);
         }
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    as</span>ync logout() {
-<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            await this.authService.logout();</span>
-<span class="cstat-no" title="statement not covered" >            runInAction(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                this.user = null;</span>
-<span class="cstat-no" title="statement not covered" >                this.isLoading = false;</span>
+    async logout() {
+        this.isLoading = true;
+        try {
+            await this.authService.logout();
+            runInAction(() =&gt; {
+                this.user = null;
+                this.isLoading = false;
             });
         } catch (error: any) {
 <span class="cstat-no" title="statement not covered" >            runInAction(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
@@ -214,7 +214,7 @@ export class AuthStore {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-02T13:21:24.412Z
+                at 2026-01-02T13:25:43.749Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

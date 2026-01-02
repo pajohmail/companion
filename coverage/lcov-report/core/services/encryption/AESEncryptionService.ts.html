@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,79 +108,79 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IEncryptionService } from './EncryptionService';
 import CryptoJS from 'crypto-js';
 &nbsp;
 export class AESEncryptionService implements IEncryptionService {
-<span class="fstat-no" title="function not covered" >    as</span>ync encrypt(data: string, key: string): Promise&lt;string&gt; {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-            const encrypted = <span class="cstat-no" title="statement not covered" >CryptoJS.AES.encrypt(data, key).toString();</span>
-<span class="cstat-no" title="statement not covered" >            return Promise.resolve(encrypted);</span>
+    async encrypt(data: string, key: string): Promise&lt;string&gt; {
+        try {
+            const encrypted = CryptoJS.AES.encrypt(data, key).toString();
+            return Promise.resolve(encrypted);
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            return Promise.reject(error);</span>
         }
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    as</span>ync decrypt(encryptedData: string, key: string): Promise&lt;string&gt; {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-            const bytes = <span class="cstat-no" title="statement not covered" >CryptoJS.AES.decrypt(encryptedData, key);</span>
-            const decrypted = <span class="cstat-no" title="statement not covered" >bytes.toString(CryptoJS.enc.Utf8);</span>
-<span class="cstat-no" title="statement not covered" >            if (!decrypted) {</span>
+    async decrypt(encryptedData: string, key: string): Promise&lt;string&gt; {
+        try {
+            const bytes = CryptoJS.AES.decrypt(encryptedData, key);
+            const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+            if (!decrypted) {
                 // If wrong key, decrypted might be empty or valid utf8 might fail
-<span class="cstat-no" title="statement not covered" >                throw new Error('Decryption failed or resulted in empty string');</span>
+                throw new Error('Decryption failed or resulted in empty string');
             }
-<span class="cstat-no" title="statement not covered" >            return Promise.resolve(decrypted);</span>
+            return Promise.resolve(decrypted);
         } catch (error) {
-<span class="cstat-no" title="statement not covered" >            return Promise.reject(error);</span>
+            return Promise.reject(error);
         }
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    as</span>ync generateKey(salt: string, passphrase: string): Promise&lt;string&gt; {
+    async generateKey(salt: string, passphrase: string): Promise&lt;string&gt; {
         // PBKDF2
-        const key = <span class="cstat-no" title="statement not covered" >CryptoJS.PBKDF2(passphrase, salt, {</span>
+        const key = CryptoJS.PBKDF2(passphrase, salt, {
             keySize: 256 / 32,
             iterations: 1000
         });
-<span class="cstat-no" title="statement not covered" >        return Promise.resolve(key.toString());</span>
+        return Promise.resolve(key.toString());
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    ge</span>nerateRandomKey(): string {
-<span class="cstat-no" title="statement not covered" >        return CryptoJS.lib.WordArray.random(256 / 8).toString();</span>
+    generateRandomKey(): string {
+        return CryptoJS.lib.WordArray.random(256 / 8).toString();
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -190,7 +190,7 @@ export class AESEncryptionService implements IEncryptionService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-02T13:21:24.412Z
+                at 2026-01-02T13:25:43.749Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

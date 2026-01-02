@@ -1,26 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { PasswordListScreen } from '../screens/PasswordListScreen';
-import { PasswordDetailScreen } from '../screens/PasswordDetailScreen';
-import { PasswordAddScreen } from '../screens/PasswordAddScreen';
-import { SettingsScreen } from '../screens/SettingsScreen';
-
-import { DocumentListScreen } from '../screens/DocumentListScreen';
-import { DocumentDetailScreen } from '../screens/DocumentDetailScreen';
-import { DocumentAddScreen } from '../screens/DocumentAddScreen';
+import { AuthScreen } from '../screens/AuthScreen';
+import { MainTabNavigator } from './MainTabNavigator';
+import { useStores } from '../../state/StoreContext';
+import { observer } from 'mobx-react-lite';
+import { View, ActivityIndicator } from 'react-native';
 
 const Stack = createStackNavigator();
 
-export const AppNavigator = () => {
+export const AppNavigator = observer(() => {
+    const { authStore } = useStores();
+    const [initializing, setInitializing] = useState(true);
+
+    useEffect(() => {
+        // Optional: Check persistence or auto-login here if not already done in Store
+        setInitializing(false);
+    }, []);
+
+    if (initializing) {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <ActivityIndicator size="large" />
+            </View>
+        );
+    }
+
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="PasswordList" component={PasswordListScreen} />
-            <Stack.Screen name="PasswordDetail" component={PasswordDetailScreen} />
-            <Stack.Screen name="PasswordAdd" component={PasswordAddScreen} />
-            <Stack.Screen name="DocumentList" component={DocumentListScreen} />
-            <Stack.Screen name="DocumentDetail" component={DocumentDetailScreen} />
-            <Stack.Screen name="DocumentAdd" component={DocumentAddScreen} />
-            <Stack.Screen name="Settings" component={SettingsScreen} />
+            {!authStore.user ? (
+                <Stack.Screen name="Auth" component={AuthScreen} />
+            ) : (
+                <Stack.Screen name="Main" component={MainTabNavigator} />
+            )}
         </Stack.Navigator>
     );
-};
+});

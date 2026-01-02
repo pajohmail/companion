@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -159,42 +159,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -230,43 +230,43 @@ export class RootStore {
     documentStore: DocumentStore;
     // documentStore will be added here
 &nbsp;
-<span class="fstat-no" title="function not covered" >    co</span>nstructor() {
-        const container = <span class="cstat-no" title="statement not covered" >Container.getInstance();</span>
+    constructor() {
+        const container = Container.getInstance();
 &nbsp;
         // Core Services
-<span class="cstat-no" title="statement not covered" >        container.register('AuthService', new GoogleAuthService());</span>
-<span class="cstat-no" title="statement not covered" >        container.register('EncryptionService', new AESEncryptionService());</span>
-<span class="cstat-no" title="statement not covered" >        container.register('KeychainManager', new KeychainManager());</span>
+        container.register('AuthService', new GoogleAuthService());
+        container.register('EncryptionService', new AESEncryptionService());
+        container.register('KeychainManager', new KeychainManager());
 &nbsp;
         // Settings Store (Early init for config)
-        const keychainManager = <span class="cstat-no" title="statement not covered" >container.resolve&lt;KeychainManager&gt;('KeychainManager');</span>
-<span class="cstat-no" title="statement not covered" >        this.settingsStore = new SettingsStore(keychainManager);</span>
-<span class="cstat-no" title="statement not covered" >        this.settingsStore.loadSettings();</span>
+        const keychainManager = container.resolve&lt;KeychainManager&gt;('KeychainManager');
+        this.settingsStore = new SettingsStore(keychainManager);
+        this.settingsStore.loadSettings();
 &nbsp;
         // Dependent Services
-<span class="cstat-no" title="statement not covered" >        container.registerFactory('GoogleDriveService', <span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >new GoogleDriveService(c.resolve('AuthService')))</span>;</span>
-<span class="cstat-no" title="statement not covered" >        container.registerFactory('PasswordRepository', <span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >new PasswordRepository(c.resolve('GoogleDriveService')))</span>;</span>
-<span class="cstat-no" title="statement not covered" >        container.registerFactory('DocumentRepository', <span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >new DocumentRepository(c.resolve('GoogleDriveService')))</span>;</span>
+        container.registerFactory('GoogleDriveService', c =&gt; new GoogleDriveService(c.resolve('AuthService')));
+        container.registerFactory('PasswordRepository', c =&gt; new PasswordRepository(c.resolve('GoogleDriveService')));
+        container.registerFactory('DocumentRepository', c =&gt; new DocumentRepository(c.resolve('GoogleDriveService')));
 &nbsp;
         // AI Services
-<span class="cstat-no" title="statement not covered" >        container.registerFactory('OCRService', <span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >new GeminiOCRService(this.settingsStore, c.resolve('AuthService')))</span>;</span>
-<span class="cstat-no" title="statement not covered" >        container.registerFactory('ChatService', <span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >new GeminiChatService(this.settingsStore, c.resolve('AuthService')))</span>;</span>
+        container.registerFactory('OCRService', c =&gt; new GeminiOCRService(this.settingsStore, c.resolve('AuthService')));
+        container.registerFactory('ChatService', c =&gt; new GeminiChatService(this.settingsStore, c.resolve('AuthService')));
 &nbsp;
         // Use Cases
-        const passwordRepo = <span class="cstat-no" title="statement not covered" >container.resolve&lt;PasswordRepository&gt;('PasswordRepository');</span>
-        const encryptionService = <span class="cstat-no" title="statement not covered" >container.resolve&lt;AESEncryptionService&gt;('EncryptionService');</span>
+        const passwordRepo = container.resolve&lt;PasswordRepository&gt;('PasswordRepository');
+        const encryptionService = container.resolve&lt;AESEncryptionService&gt;('EncryptionService');
 &nbsp;
-        const createPasswordUseCase = <span class="cstat-no" title="statement not covered" >new CreatePasswordUseCase(passwordRepo, encryptionService);</span>
-        const getPasswordsUseCase = <span class="cstat-no" title="statement not covered" >new GetPasswordsUseCase(passwordRepo, encryptionService);</span>
+        const createPasswordUseCase = new CreatePasswordUseCase(passwordRepo, encryptionService);
+        const getPasswordsUseCase = new GetPasswordsUseCase(passwordRepo, encryptionService);
 &nbsp;
         // Stores
-<span class="cstat-no" title="statement not covered" >        this.authStore = new AuthStore(container.resolve&lt;GoogleAuthService&gt;('AuthService'));</span>
-<span class="cstat-no" title="statement not covered" >        this.passwordStore = new PasswordStore(</span>
+        this.authStore = new AuthStore(container.resolve&lt;GoogleAuthService&gt;('AuthService'));
+        this.passwordStore = new PasswordStore(
             createPasswordUseCase,
             getPasswordsUseCase,
             container.resolve&lt;KeychainManager&gt;('KeychainManager')
         );
-<span class="cstat-no" title="statement not covered" >        this.documentStore = new DocumentStore(</span>
+        this.documentStore = new DocumentStore(
             container.resolve&lt;DocumentRepository&gt;('DocumentRepository'),
             new AddDocumentUseCase(
                 container.resolve&lt;DocumentRepository&gt;('DocumentRepository'),
@@ -286,7 +286,7 @@ export class RootStore {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-02T13:21:24.412Z
+                at 2026-01-02T13:25:43.749Z
             </div>
         <script src="../prettify.js"></script>
         <script>

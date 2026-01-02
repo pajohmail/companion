@@ -8,20 +8,15 @@ import { StoreProvider, useStores } from './src/state/StoreContext';
 import { AuthScreen } from './src/presentation/screens/AuthScreen';
 import { observer } from 'mobx-react-lite';
 
+import { ErrorBoundary } from './src/presentation/components/common/ErrorBoundary';
+
 const Main = observer(() => {
-  const { authStore } = useStores();
-
-  if (!authStore.user) {
-    return <AuthScreen />;
-  }
-
+  // Auth logic is now in AppNavigator
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
+    <NavigationContainer>
+      <AppNavigator />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 });
 
@@ -29,7 +24,9 @@ export default function App() {
   return (
     <StoreProvider>
       <PaperProvider>
-        <Main />
+        <ErrorBoundary>
+          <Main />
+        </ErrorBoundary>
       </PaperProvider>
     </StoreProvider>
   );
