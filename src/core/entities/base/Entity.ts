@@ -18,4 +18,8 @@ export abstract class Entity<T> {
             updatedAt: this.updatedAt.toISOString(),
         };
     }
+    public updateTimestamp() {
+        // @ts-ignore
+        this.updatedAt = new Date();
+    }
 }

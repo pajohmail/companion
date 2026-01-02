@@ -7,4 +7,5 @@ export interface ExtractedCredentials {
 
 export interface IOCRService {
     extractCredentials(imageBase64: string): Promise<ExtractedCredentials>;
+    extractText(imageBase64: string): Promise<string>;
 }

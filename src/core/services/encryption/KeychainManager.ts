@@ -43,4 +43,46 @@ export class KeychainManager {
             return false;
         }
     }
+    async hasItem(service: string): Promise<boolean> {
+        return !!(await this.getItem(service));
+    }
+
+    async setItem(service: string, username: string, value: string): Promise<boolean> {
+        try {
+            await Keychain.setGenericPassword(username, value, {
+                service: service,
+                accessible: Keychain.ACCESSIBLE.WHEN_UNLOCKED_THIS_DEVICE_ONLY,
+            });
+            return true;
+        } catch (error) {
+            Logger.error(`Failed to save item to keychain (${service})`, error);
+            return false;
+        }
+    }
+
+    async getItem(service: string): Promise<string | null> {
+        try {
+            const result = await Keychain.getGenericPassword({
+                service: service,
+            });
+            if (result) {
+                return result.password;
+            }
+            return null;
+        } catch (error) {
+            Logger.warn(`Failed to retrieve item from keychain (${service})`, error);
+            return null;
+        }
+    }
+
+    async deleteItem(service: string): Promise<boolean> {
+        try {
+            return await Keychain.resetGenericPassword({
+                service: service,
+            });
+        } catch (error) {
+            Logger.error(`Failed to delete item from keychain (${service})`, error);
+            return false;
+        }
+    }
 }
